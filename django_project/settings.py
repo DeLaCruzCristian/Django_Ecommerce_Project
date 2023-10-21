@@ -131,3 +131,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Session
 CART_SESSION_ID = "cart"
+
+# Email
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"

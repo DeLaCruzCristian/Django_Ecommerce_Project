@@ -5,31 +5,42 @@
 <head>
     <meta charset="utf-8" />
     <title>{% block title %}My shop{% endblock %}</title>
-    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
 </head>
 
-<body>
-    <div id="header">
-        <a href="/" class="logo">My shop</a>
-    </div>
-    <div id="subheader">
-        <div class="cart">
-            {% with total_items=cart|length %}
-                {% if total_items > 0 %}
-                    Your cart:
-                    <a href="{% url 'cart:cart_detail' %}">
-                        {{ total_items }} item{{ total_items|pluralize }},
-                        ${{ cart.get_total_price }}
-                    </a>
-                {% elif not order %}
-                    Your cart is empty.
-                {% endif %}
-            {% endwith %}
+<body class="">
+    <nav class="navbar navbar-expand-md bg-dark border-bottom border-body navbar-dark">
+        <div class="container-xxl">
+            <a class="navbar-brand" href="/">My shop</a>
+            <div class="justify-content-end align-center">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        {% with total_items=cart|length %}
+                            {% if total_items > 0 %}
+                                <a href="{% url 'cart:cart_detail' %}" class="btn btn-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                    </svg>
+                                    Cart:
+                                    {{ total_items }} item{{ total_items|pluralize }}
+                                </a>
+                            {% elif not order %}
+                                <span class="text-secondary">Your cart is empty.</span>
+                            {% endif %}
+                        {% endwith %}
+                    </li>
+                    
+                </ul>
+            </div>
         </div>
-    </div>
-    <div id="content">
-        {% block content %}
-        {% endblock %}
+    </nav>
+    <div> 
+        <div class="container-xxl my-5 lead">
+            {% block content %}
+            {% endblock %}
+        </div>
     </div>
 </body>
 

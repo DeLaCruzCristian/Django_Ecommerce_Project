@@ -1,6 +1,19 @@
 # Django_Ecommerce_Project
 E-commerce project built using Django
 
+## Features
+The notable features of my E-commerce project are:
+-  SEO-friendly URLs formated as `year/month/day/slug`
+-  Canonical URLs for blog posts
+-  Pagination that displays three posts per page
+-  Post recommendations by email
+-  Comment system (which the admin is able to moderate)
+-  Tagging system to categorize posts by tags
+-  Post recommendations based on similar tags
+-  Sitemap for search engines
+-  RSS feed that users can subscribe to
+-  Full-text search engine.
+
 ## Installation
 First clone the repository and change into the directory
 ```bash

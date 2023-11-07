@@ -14,6 +14,8 @@ The notable features of my E-commerce project are:
 -  RSS feed that users can subscribe to
 -  Full-text search engine.
 
+![screenshot 87](https://github.com/DeLaCruzCristian/Django_Ecommerce_Project/assets/141530518/27bde930-4f3c-4c27-b318-bc45b4be3c5f)
+
 ## Installation
 First clone the repository and change into the directory
 ```bash

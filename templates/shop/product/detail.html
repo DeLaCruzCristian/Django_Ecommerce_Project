@@ -13,19 +13,24 @@
         {% static 'images/no_image.png' %}{% endif %}">
   </div>
   <div class="col-7">
-      <h1 class="display-3">{{ product.name }}</h1>
-      <h2>
-          <a class="text-decoration-none" href="{{ product.category.get_absolute_url }}">
-              {{ product.category }}
-          </a>
-      </h2>
-      <p class="text-danger font-weight-bold">${{ product.price }}</p>
-      <form action="{% url 'cart:cart_add' product.id %}" method="post">
-          {{ cart_product_form }}
-          {% csrf_token %}
-          <input type="submit" value="Add to cart" class="btn btn-success">
-      </form>
-      {{ product.description|linebreaks }}
+    <div class="bg-light p-5 rounded">
+        <h1 class="display-5">{{ product.name }}</h1>
+        <h2>
+            <a class="text-decoration-none" href="{{ product.category.get_absolute_url }}">
+                {{ product.category }}
+            </a>
+        </h2>
+        <div class="mb-3">
+          <p class="text-danger font-weight-bold">${{ product.price }}</p>
+          <form action="{% url 'cart:cart_add' product.id %}" method="post">
+              {{ cart_product_form }}
+              {% csrf_token %}
+              <input type="submit" value="Add to cart" class="btn btn-success">
+          </form>
+        </div>
+        {{ product.description|linebreaks }}
+    </div>
+      
   </div>
 </div>
 <div>

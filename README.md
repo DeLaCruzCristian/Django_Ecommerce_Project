@@ -3,16 +3,16 @@ E-commerce project built using Django
 
 ## Features
 The notable features of my E-commerce project are:
--  SEO-friendly URLs formated as `year/month/day/slug`
--  Canonical URLs for blog posts
--  Pagination that displays three posts per page
--  Post recommendations by email
--  Comment system (which the admin is able to moderate)
--  Tagging system to categorize posts by tags
--  Post recommendations based on similar tags
--  Sitemap for search engines
--  RSS feed that users can subscribe to
--  Full-text search engine.
+-  Built shopping cart using Django sessions
+-  SEO-friendly URLs for products
+-  Created a context processor to display the total number of items in the cart globally.
+-  Added asynchronous tasks (sending emails) using RabbitMQ and Celery.
+-  Integrated Stripe as the payment gateway using its API.
+-  Receiving payment notifications from Stripe using webhooks.
+-  Created a custom view in the admin page for information about orders
+-  Generating and rendering PDf invoices dynamically
+-  Created a coupon system with validation and works with Stripe.
+-  A recommendation engine using Redis, which recommends items frequently bought together.
 
 ## Demo 
 https://github.com/DeLaCruzCristian/Django_Ecommerce_Project/assets/141530518/8ed0e744-a487-4960-b567-1090e401e0d0
